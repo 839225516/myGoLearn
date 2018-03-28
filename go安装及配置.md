@@ -51,7 +51,7 @@ vim main.go
 ```
 $GOPATH/src/myproc/main.go 源码
 ```go
-package package
+package main
 
 import (
     "myapp"
