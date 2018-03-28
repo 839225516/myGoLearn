@@ -22,6 +22,19 @@ GOPATH目录约定有三个子目录
     package是main就表示是可执行应用
     package是非main就表示应用包
 
+$GOPATH/src/myapp/sqrt.go
+```go
+package myapp
+
+func Sqrt(x float64) float64 {
+    z := 0.0
+    for i := 0; i < 1000; i++ {
+        z -= (z*z - x) / (2 * x)
+    }
+    return z
+}
+```
+
 ###  编译应用  ###
 编译安装应用包：
 1) 进入对应的应用包目录$GOPATH/src/myapp ，然后执行 go install ,就可以安装
@@ -46,8 +59,22 @@ import (
 )
 
 func main(){
-    fmt.Println("Hello,world.%s \n",myapp.Echo(good))
+    fmt.Println("Hello,world. sqrt(2)=%v \n",myapp.Sqrt(2))
 }
 ```
 
 编译可执行应用，进入应用目录，然后执行 go build,该目录下就会生成可以执行文件
+
+### 获取远程包 ###
+go语言有一个获取远程包的工具就是go get，目前go get支持多数开源社区(例如：github、googlecode、bitbucket、Launchpad)
+```shell
+go get github.com/astaxie/beedb
+#go get -u 参数可以自动更新包，而且当go get的时候会自动获取该包依赖的其他第三方包
+```
+go get本质上可以理解为首先第一步是通过源码工具clone代码到src下面，然后执行go install
+
+
+在代码中如何使用远程包，很简单的就是和使用本地包一样，只要在开头import相应的路径就可以
+```go
+import "github.com/astaxie/beedb"
+```
