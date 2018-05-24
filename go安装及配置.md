@@ -91,7 +91,9 @@ golang 在 github 上建立了一个镜像库，如 https://github.com/golang/ne
 获取 golang.org/x/net 包，其实只需要以下步骤：
 
 > mkdir -p $GOPATH/src/golang.org/x
+
 > cd $GOPATH/src/golang.org/x
+
 > git clone https://github.com/golang/net.git
 
 其它 golang.org/x 下的包获取皆可使用该方法
