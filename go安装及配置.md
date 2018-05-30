@@ -97,3 +97,23 @@ golang 在 github 上建立了一个镜像库，如 https://github.com/golang/ne
 > git clone https://github.com/golang/net.git
 
 其它 golang.org/x 下的包获取皆可使用该方法
+
+
+-------------------
+
+windows 安装 golang
+
+下载golang的msi安装文件，直接安装。<br>
+Golang在安装完成后会在系统变量中自动添加一个GOROOT变量，这个变量就是Golang的安装目录,默认C:\Go\ <br>
+在Path变量中自动添加一个 D:\Go\bin 变量，这是Golang的安装目录下的bin目录。<br>
+
+##### 设置Golang的工作目录 #####
+在D盘新建文件夹GoWorks，在GoWorks中在新建三个子目录：
+    
+    src(此目录用来存放项目源代码) 
+    pkg(此目录用来存放项目编译后的生成文件) 
+    bin(此目录用来存放编译后生成的可执行文件)<br>
+
+文件夹都新建完成后，我们在回到系统环境变量中，手动添加 GOPATH 变量，值为：D:\GoWorks。在找到Path变量，然后点击编辑按钮，添加D:\GoWorks\bin
+
+
