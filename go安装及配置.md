@@ -4,7 +4,7 @@ go安装及配置
 
 vim /etc/profile
 ```shell
-export GOROOT=/usr/local/go
+export GOROOT="/usr/lib/golang"
 export PATH=$PATH:GOROOT/bin
 export GOPATH=/data/goapp
 ```
